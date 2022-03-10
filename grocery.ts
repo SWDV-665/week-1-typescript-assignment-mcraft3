@@ -1,46 +1,53 @@
 interface Grocery { 
-  name: string;
   id: number;
-  quantity: number;
+  name: string;
   size: string;
+  ui: string;
+  quantity: number;
 }
 
 class Grocery {
-  constructor(name: string, id: number, quantity: number, size: string) {
-    this.name = name;
+  id: number;
+  name: string;
+  size: string;
+  ui: string;
+  quantity: number;
+
+  constructor(id: number, name: string, size: string, ui: string, quantity: number) {
     this.id = id;
-    this.quantity = quantity;
+    this.name = name;
     this.size = size;
+    this.ui = ui;
+    this.quantity = quantity;
   }
   
   getGroceryProperties() {
-    return `${this.name} ${this.id} ${this.quantity} ${this.size}`;
+    return `${this.id} ${this.name} ${this.size} ${this.ui} ${this.quantity}`;
   }
 
 }
 
-let milk = new Grocery("Milk", 1, 3, "Medium");
-console.log(milk.getGroceryProperties());
-let bread = new Grocery("Bread", 1, 3, "Loaf");
-console.log(bread.getGroceryProperties());
-let eggs = new Grocery("Eggs", 1, 3, "X-Large");
-console.log(eggs.getGroceryProperties());
+let milk = new Grocery(1, "Milk", "Medium", "Gallon", 3);
+
+let bread = new Grocery(2, "Bread", "King", "Loaf", 6);
+
+let eggs = new Grocery(3, "Eggs", "X-Large", "Dozen", 11);
 
 let groceries = [];
 groceries.push(milk, bread, eggs);
-console.log(groceries);
 
-let message1: string = (groceries[0].name + ', ' + groceries[0].id + ', ' + groceries[0].quantity + ', ' + groceries[0].size);
-let heading1 = document.createElement('h1');
+
+let message1: string = (groceries[0].id + ', ' + groceries[0].name + ', ' + groceries[0].size + ', ' + groceries[0].ui + ', ' + groceries[0].quantity);
+let heading1 = document.createElement('h3');
 heading1.textContent = message1;
 document.body.appendChild(heading1);
 
-let message2: string = (groceries[1].name + ', ' + groceries[1].id + ', ' + groceries[1].quantity + ', ' + groceries[1].size);
-let heading2 = document.createElement('h1');
+let message2: string = (groceries[1].id + ', ' + groceries[1].name + ', ' + groceries[1].size + ', ' + groceries[1].ui + ', ' + groceries[1].quantity);
+let heading2 = document.createElement('h3');
 heading2.textContent = message2;
 document.body.appendChild(heading2);
 
-let message3: string = (groceries[2].name + ', ' + groceries[2].id + ', ' + groceries[2].quantity + ', ' + groceries[2].size);
-let heading3 = document.createElement('h1');
+let message3: string = (groceries[2].id + ', ' + groceries[2].name + ', ' + groceries[2].size + ', ' + groceries[2].ui + ', ' + groceries[2].quantity);
+let heading3 = document.createElement('h3');
 heading3.textContent = message3;
 document.body.appendChild(heading3);
