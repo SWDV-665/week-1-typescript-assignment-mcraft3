@@ -7,12 +7,6 @@ interface Grocery {
 }
 
 class Grocery {
-  id: number;
-  name: string;
-  size: string;
-  ui: string;
-  quantity: number;
-
   constructor(id: number, name: string, size: string, ui: string, quantity: number) {
     this.id = id;
     this.name = name;
@@ -22,7 +16,8 @@ class Grocery {
   }
   
   getGroceryProperties() {
-    return `${this.id}, ${this.name}, ${this.size}, ${this.ui}, ${this.quantity}`;
+    return `${this.id} &emsp; ${this.name} &emsp;&emsp; ${this.size} 
+    &emsp;&emsp;&emsp; ${this.ui} &emsp;&emsp;&emsp;&emsp;&emsp; ${this.quantity}`;
   }
 
 }
@@ -35,8 +30,8 @@ let groceries = [];
 groceries.push(milk, bread, eggs);
 
 for (let x in groceries) {
-  let message = groceries[x].getGroceryProperties();
-  let heading = document.createElement('h3');
-  heading.textContent = message;
-  document.body.appendChild(heading);
+  var g = document.createElement('li');
+  g.id = 'groceries' + [x];
+  g.innerHTML = groceries[x].getGroceryProperties();
+  document.getElementById("groceries").appendChild(g);
 };

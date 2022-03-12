@@ -7,7 +7,7 @@ var Grocery = /** @class */ (function () {
         this.quantity = quantity;
     }
     Grocery.prototype.getGroceryProperties = function () {
-        return "".concat(this.id, ", ").concat(this.name, ", ").concat(this.size, ", ").concat(this.ui, ", ").concat(this.quantity);
+        return "".concat(this.id, " &emsp; ").concat(this.name, " &emsp;&emsp; ").concat(this.size, " \n    &emsp;&emsp;&emsp; ").concat(this.ui, " &emsp;&emsp;&emsp;&emsp;&emsp; ").concat(this.quantity);
     };
     return Grocery;
 }());
@@ -17,9 +17,9 @@ var eggs = new Grocery(3, "Eggs", "X-Large", "Dozen", 11);
 var groceries = [];
 groceries.push(milk, bread, eggs);
 for (var x in groceries) {
-    var message = groceries[x].getGroceryProperties();
-    var heading = document.createElement('h3');
-    heading.textContent = message;
-    document.body.appendChild(heading);
+    var g = document.createElement('li');
+    g.id = 'groceries' + [x];
+    g.innerHTML = groceries[x].getGroceryProperties();
+    document.getElementById("groceries").appendChild(g);
 }
 ;
