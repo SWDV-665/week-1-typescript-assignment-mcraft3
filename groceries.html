@@ -1,19 +1,40 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Groceries</title>
-  </head>
-  <body>
+    <style>
+        table, td, th { border: 1px solid }
+        table { border-collapse: collapse }
+    </style>
+</head>
+<body>
     <h1>TypeScript Assignment - Groceries</h1><br>
+    <h2>TypeScript to Insert Data into HTML Unordered List</h2>
     <div>
-      <ul id="groceries" style="list-style-type: none">ID &nbsp; Name &emsp;&emsp; Size &emsp;&emsp;&emsp;&emsp; 
-        UI &emsp;&emsp;&emsp;&emsp;&emsp; Qty
-        <script src="grocery.js"></script>
-      </ul>
-    </div>
+        <ul id="groceries" style="list-style-type: none">ID &nbsp; Name &emsp;&emsp; Size &emsp;&emsp;&emsp;&emsp; 
+          UI &emsp;&emsp;&emsp;&emsp;&emsp; Qty
+  
+        </ul>
+      </div><br>
 
-  </body>
+      <h2>TypeScript to Insert Data into HTML Table</h2>
+    <table class="groceryTable my-1">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Unit of Issue</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+ 
+    <script src="grocery.js"></script>
+
+</body>
 </html>

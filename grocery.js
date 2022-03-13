@@ -23,3 +23,14 @@ for (var x in groceries) {
     document.getElementById("groceries").appendChild(g);
 }
 ;
+// Add on Script to build Table of Groceries
+var table = document.querySelector(".groceryTable");
+for (var _i = 0, groceries_1 = groceries; _i < groceries_1.length; _i++) {
+    var obj = groceries_1[_i];
+    var tr = table.insertRow();
+    tr.insertCell().textContent = obj.id;
+    tr.insertCell().textContent = obj.name;
+    tr.insertCell().textContent = obj.size;
+    tr.insertCell().textContent = obj.ui;
+    tr.insertCell().textContent = obj.quantity;
+}

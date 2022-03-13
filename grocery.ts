@@ -1,3 +1,4 @@
+// Script to build UnOrdered List of Groceries
 interface Grocery { 
   id: number;
   name: string;
@@ -7,6 +8,12 @@ interface Grocery {
 }
 
 class Grocery {
+  id: number;
+  name: string;
+  size: string;
+  ui: string;
+  quantity: number;
+
   constructor(id: number, name: string, size: string, ui: string, quantity: number) {
     this.id = id;
     this.name = name;
@@ -35,3 +42,14 @@ for (let x in groceries) {
   g.innerHTML = groceries[x].getGroceryProperties();
   document.getElementById("groceries").appendChild(g);
 };
+
+// Add on Script to build Table of Groceries
+let table = document.querySelector(".groceryTable");
+for (let obj of groceries) {
+  let tr = (table as any).insertRow();
+  tr.insertCell().textContent = obj.id;
+  tr.insertCell().textContent = obj.name;
+  tr.insertCell().textContent = obj.size;
+  tr.insertCell().textContent = obj.ui;
+  tr.insertCell().textContent = obj.quantity;
+}
